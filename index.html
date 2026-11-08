@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>アプリ一覧</title>
-    <meta name="description" content="開発したゲーム・アプリの一覧">
+    <title data-en="App List">アプリ一覧</title>
+    <meta name="description" content="開発したゲーム・アプリの一覧" data-en-content="Games and apps I&#x27;ve developed">
     <style>
         :root {
             --bg: #12141f;
@@ -34,7 +34,7 @@
             padding: 0 16px;
         }
         header {
-            padding: 56px 0 24px;
+            padding: 16px 16px 24px;
             text-align: center;
         }
         header h1 {
@@ -45,6 +45,28 @@
         header p {
             margin: 8px 0 0;
             color: var(--muted);
+        }
+        .lang {
+            display: flex;
+            width: max-content;
+            margin: 0 0 16px auto;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            overflow: hidden;
+        }
+        .lang button {
+            font: inherit;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--muted);
+            background: none;
+            border: 0;
+            padding: 4px 12px;
+            cursor: pointer;
+        }
+        .lang button[aria-pressed="true"] {
+            color: #12141f;
+            background: var(--accent);
         }
         h2 {
             margin: 40px 0 16px;
@@ -164,125 +186,129 @@
 <body>
 
 <header class="wrap">
-    <h1>開発したゲーム・アプリの一覧</h1>
+    <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="ja" aria-pressed="true">日本語</button>
+        <button type="button" data-lang="en" aria-pressed="false">English</button>
+    </div>
+    <h1 data-en="Games &amp; Apps I&#x27;ve Made">開発したゲーム・アプリの一覧</h1>
 </header>
 
 <main class="wrap">
 
-    <h2>ゲーム</h2>
+    <h2 data-en="Games">ゲーム</h2>
     <div class="apps">
 
         <article class="app">
             <a class="icon" href="https://apps.apple.com/jp/app/id6820499315" target="_blank" rel="noopener">
-                <img src="images/apps/macho-tonbo.png" alt="マッチョトンボ" width="112" height="112">
+                <img src="images/apps/macho-tonbo.png" alt="マッチョトンボ" data-en-alt="Dragonfly: Buff Bug Roguelite" width="112" height="112">
             </a>
             <div class="body">
-                <span class="tag">3D育成アクション</span>
-                <h3><a href="https://apps.apple.com/jp/app/id6820499315" target="_blank" rel="noopener">マッチョトンボ</a></h3>
-                <p class="catch">攻撃ボタンはない。飛ぶこと、それ自体が武器だ。</p>
-                <p class="desc">プロテインでムキムキになった池の生き物たち。ちっちゃなヤゴから食べて育ち、羽化したらスピードと重さを乗せた体当たりで木も電柱も吹っ飛ばせ！</p>
-                <a class="store" href="https://apps.apple.com/jp/app/id6820499315" target="_blank" rel="noopener">App Storeで見る</a>
+                <span class="tag" data-en="3D Growth Action">3D育成アクション</span>
+                <h3><a href="https://apps.apple.com/jp/app/id6820499315" target="_blank" rel="noopener" data-en="Dragonfly: Buff Bug Roguelite">マッチョトンボ</a></h3>
+                <p class="catch" data-en="No attack button. Flying itself is your weapon.">攻撃ボタンはない。飛ぶこと、それ自体が武器だ。</p>
+                <p class="desc" data-en="Pond creatures pumped up on protein. Start as a tiny nymph and eat to grow — once you emerge, ram trees and utility poles with all your speed and weight!">プロテインでムキムキになった池の生き物たち。ちっちゃなヤゴから食べて育ち、羽化したらスピードと重さを乗せた体当たりで木も電柱も吹っ飛ばせ！</p>
+                <a class="store" href="https://apps.apple.com/jp/app/id6820499315" target="_blank" rel="noopener" data-en="View on App Store">App Storeで見る</a>
             </div>
         </article>
 
         <article class="app">
             <a class="icon" href="https://apps.apple.com/jp/app/id6776235621" target="_blank" rel="noopener">
-                <img src="images/apps/muscle-hammer.png" alt="マッチョハンマー" width="112" height="112">
+                <img src="images/apps/muscle-hammer.png" alt="マッチョハンマー" data-en-alt="Macho Hammer: Ragdoll Fight" width="112" height="112">
             </a>
             <div class="body">
-                <span class="tag">物理対戦バトル</span>
-                <h3><a href="https://apps.apple.com/jp/app/id6776235621" target="_blank" rel="noopener">マッチョハンマー</a></h3>
-                <p class="catch">殴って、よろけて、落ちたら負け。</p>
-                <p class="desc">ぐにゃぐにゃのマッチョが重すぎるハンマーで殴り合う物理対戦。回すほど加速する遠心スイングで場外へ吹き飛ばせ！iPhone2台でのローカル対戦も。</p>
-                <a class="store" href="https://apps.apple.com/jp/app/id6776235621" target="_blank" rel="noopener">App Storeで見る</a>
+                <span class="tag" data-en="Physics Battle">物理対戦バトル</span>
+                <h3><a href="https://apps.apple.com/jp/app/id6776235621" target="_blank" rel="noopener" data-en="Macho Hammer: Ragdoll Fight">マッチョハンマー</a></h3>
+                <p class="catch" data-en="Smash, stagger, fall off — and you lose.">殴って、よろけて、落ちたら負け。</p>
+                <p class="desc" data-en="Floppy muscle men brawl with way-too-heavy hammers. The more you spin, the faster your centrifugal swing — send them flying out of the ring! Local versus on two iPhones, too.">ぐにゃぐにゃのマッチョが重すぎるハンマーで殴り合う物理対戦。回すほど加速する遠心スイングで場外へ吹き飛ばせ！iPhone2台でのローカル対戦も。</p>
+                <a class="store" href="https://apps.apple.com/jp/app/id6776235621" target="_blank" rel="noopener" data-en="View on App Store">App Storeで見る</a>
             </div>
         </article>
 
         <article class="app">
             <a class="icon" href="https://apps.apple.com/jp/app/id6774583737" target="_blank" rel="noopener">
-                <img src="images/apps/machoblo.png" alt="マチョブロ" width="112" height="112">
+                <img src="images/apps/machoblo.png" alt="マチョブロ" data-en-alt="MachoBlo: Dog Rescue Puzzle" width="112" height="112">
             </a>
             <div class="body">
-                <span class="tag">脳トレパズル</span>
-                <h3><a href="https://apps.apple.com/jp/app/id6774583737" target="_blank" rel="noopener">マチョブロ</a></h3>
-                <p class="catch">ラインを消すたび、マッチョが子犬へ一歩近づく。</p>
-                <p class="desc">消したラインが救助員の「歩数」になる新感覚ブロックパズル。どの列を消して、どこへ進むか。一手ごとに頭を使う、子犬救出の全50ステージ。</p>
-                <a class="store" href="https://apps.apple.com/jp/app/id6774583737" target="_blank" rel="noopener">App Storeで見る</a>
+                <span class="tag" data-en="Brain Puzzle">脳トレパズル</span>
+                <h3><a href="https://apps.apple.com/jp/app/id6774583737" target="_blank" rel="noopener" data-en="MachoBlo: Dog Rescue Puzzle">マチョブロ</a></h3>
+                <p class="catch" data-en="Every line you clear brings the macho one step closer to the puppy.">ラインを消すたび、マッチョが子犬へ一歩近づく。</p>
+                <p class="desc" data-en="A new kind of block puzzle where cleared lines become the rescuer&#x27;s steps. Which line to clear, where to go — every move counts across 50 puppy-rescue stages.">消したラインが救助員の「歩数」になる新感覚ブロックパズル。どの列を消して、どこへ進むか。一手ごとに頭を使う、子犬救出の全50ステージ。</p>
+                <a class="store" href="https://apps.apple.com/jp/app/id6774583737" target="_blank" rel="noopener" data-en="View on App Store">App Storeで見る</a>
             </div>
         </article>
 
         <article class="app">
             <a class="icon" href="https://apps.apple.com/jp/app/id6802943144" target="_blank" rel="noopener">
-                <img src="images/apps/blockrogue.png" alt="ブロックローグ" width="112" height="112">
+                <img src="images/apps/blockrogue.png" alt="ブロックローグ" data-en-alt="BLOCKVOUR: Block Survivor" width="112" height="112">
             </a>
             <div class="body">
-                <span class="tag">ローグライク弾幕</span>
-                <h3><a href="https://apps.apple.com/jp/app/id6802943144" target="_blank" rel="noopener">ブロックローグ</a></h3>
-                <p class="catch">倒した敵を喰らって、自分の体に継ぎ足せ。</p>
-                <p class="desc">8マスの小さな塊から、画面からはみ出す要塞へ。「何を、どこに積むか」がそのままビルドになる、片手で遊べるローグライクシューティング。</p>
-                <a class="store" href="https://apps.apple.com/jp/app/id6802943144" target="_blank" rel="noopener">App Storeで見る</a>
+                <span class="tag" data-en="Roguelike Bullet Hell">ローグライク弾幕</span>
+                <h3><a href="https://apps.apple.com/jp/app/id6802943144" target="_blank" rel="noopener" data-en="BLOCKVOUR: Block Survivor">ブロックローグ</a></h3>
+                <p class="catch" data-en="Devour fallen enemies and bolt them onto your body.">倒した敵を喰らって、自分の体に継ぎ足せ。</p>
+                <p class="desc" data-en="From a tiny 8-cell cluster to a fortress that bursts off the screen. What you stack and where becomes your build — a roguelike shooter you can play one-handed.">8マスの小さな塊から、画面からはみ出す要塞へ。「何を、どこに積むか」がそのままビルドになる、片手で遊べるローグライクシューティング。</p>
+                <a class="store" href="https://apps.apple.com/jp/app/id6802943144" target="_blank" rel="noopener" data-en="View on App Store">App Storeで見る</a>
             </div>
         </article>
 
         <article class="app">
             <a class="icon" href="https://apps.apple.com/jp/app/id6808896192" target="_blank" rel="noopener">
-                <img src="images/apps/craft-castle.png" alt="クラフトキャッスル" width="112" height="112">
+                <img src="images/apps/craft-castle.png" alt="クラフトキャッスル" data-en-alt="Craft Castle: Siege Roguelike" width="112" height="112">
             </a>
             <div class="body">
-                <span class="tag">攻城ローグライク</span>
-                <h3><a href="https://apps.apple.com/jp/app/id6808896192" target="_blank" rel="noopener">クラフトキャッスル</a></h3>
-                <p class="catch">自分で建てた城で、撃ち合え。</p>
-                <p class="desc">16種の建材と車輪・ヒンジ・プロペラなどの機構で、走る戦車も歩く城も思いのまま。投石機で交互に撃ち合い、物理演算で相手の城をぶっ壊す読み合いバトル。</p>
-                <a class="store" href="https://apps.apple.com/jp/app/id6808896192" target="_blank" rel="noopener">App Storeで見る</a>
+                <span class="tag" data-en="Siege Roguelike">攻城ローグライク</span>
+                <h3><a href="https://apps.apple.com/jp/app/id6808896192" target="_blank" rel="noopener" data-en="Craft Castle: Siege Roguelike">クラフトキャッスル</a></h3>
+                <p class="catch" data-en="Build your own castle. Then open fire.">自分で建てた城で、撃ち合え。</p>
+                <p class="desc" data-en="16 building materials plus wheels, hinges, propellers and more — build rolling tanks or walking castles. Trade catapult shots and smash your rival&#x27;s castle with real physics in a battle of wits.">16種の建材と車輪・ヒンジ・プロペラなどの機構で、走る戦車も歩く城も思いのまま。投石機で交互に撃ち合い、物理演算で相手の城をぶっ壊す読み合いバトル。</p>
+                <a class="store" href="https://apps.apple.com/jp/app/id6808896192" target="_blank" rel="noopener" data-en="View on App Store">App Storeで見る</a>
             </div>
         </article>
 
     </div>
 
-    <h2>アプリ</h2>
+    <h2 data-en="Apps">アプリ</h2>
     <div class="apps">
 
         <article class="app">
             <a class="icon" href="https://apps.apple.com/jp/app/id6771366480" target="_blank" rel="noopener">
-                <img src="images/apps/tough-love-fitness.png" alt="ドS筋トレ" width="112" height="112">
+                <img src="images/apps/tough-love-fitness.png" alt="ドS筋トレ" data-en-alt="Tough Love Fitness: Gym Log" width="112" height="112">
             </a>
             <div class="body">
-                <span class="tag">筋トレ記録</span>
-                <h3><a href="https://apps.apple.com/jp/app/id6771366480" target="_blank" rel="noopener">ドS筋トレ</a></h3>
-                <p class="catch">甘やかしは一切なし。サボれば、叱られる。</p>
-                <p class="desc">毒舌なイケメン・美女トレーナーが音声であなたをしごく筋トレアプリ。サボると怒りメーターが上昇して強制ミッション発動。三日坊主を終わらせたい人へ。</p>
-                <a class="store" href="https://apps.apple.com/jp/app/id6771366480" target="_blank" rel="noopener">App Storeで見る</a>
+                <span class="tag" data-en="Workout Log">筋トレ記録</span>
+                <h3><a href="https://apps.apple.com/jp/app/id6771366480" target="_blank" rel="noopener" data-en="Tough Love Fitness: Gym Log">ドS筋トレ</a></h3>
+                <p class="catch" data-en="No coddling. Skip a workout and you&#x27;ll get scolded.">甘やかしは一切なし。サボれば、叱られる。</p>
+                <p class="desc" data-en="Sharp-tongued trainers drill you by voice. Slack off and the anger meter rises, triggering mandatory missions. For anyone ready to stop quitting after three days.">毒舌なイケメン・美女トレーナーが音声であなたをしごく筋トレアプリ。サボると怒りメーターが上昇して強制ミッション発動。三日坊主を終わらせたい人へ。</p>
+                <a class="store" href="https://apps.apple.com/jp/app/id6771366480" target="_blank" rel="noopener" data-en="View on App Store">App Storeで見る</a>
             </div>
         </article>
 
         <article class="app">
             <a class="icon" href="https://apps.apple.com/jp/app/id6829105969" target="_blank" rel="noopener">
-                <img src="images/apps/tabemon.png" alt="たべモン" width="112" height="112">
+                <img src="images/apps/tabemon.png" alt="たべモン" data-en-alt="Meal Creature: Calorie Counter" width="112" height="112">
             </a>
             <div class="body">
-                <span class="tag">食事記録</span>
-                <h3><a href="https://apps.apple.com/jp/app/id6829105969" target="_blank" rel="noopener">たべモン</a></h3>
-                <p class="catch">食べたものから、今日だけのモンスターが生まれる。</p>
-                <p class="desc">食事を記録するだけで、その日のごはんからかわいいモンスターが誕生。カロリー計算・PFCバランス・体重記録で食事管理しながら、30種類以上の図鑑コレクションも楽しめます。</p>
-                <a class="store" href="https://apps.apple.com/jp/app/id6829105969" target="_blank" rel="noopener">App Storeで見る</a>
+                <span class="tag" data-en="Meal Log">食事記録</span>
+                <h3><a href="https://apps.apple.com/jp/app/id6829105969" target="_blank" rel="noopener" data-en="Meal Creature: Calorie Counter">たべモン</a></h3>
+                <p class="catch" data-en="What you eat hatches a monster just for today.">食べたものから、今日だけのモンスターが生まれる。</p>
+                <p class="desc" data-en="Simply log your meals and a cute monster is born from the day&#x27;s food. Track calories, PFC balance and weight while collecting 30+ creatures in your monster book.">食事を記録するだけで、その日のごはんからかわいいモンスターが誕生。カロリー計算・PFCバランス・体重記録で食事管理しながら、30種類以上の図鑑コレクションも楽しめます。</p>
+                <a class="store" href="https://apps.apple.com/jp/app/id6829105969" target="_blank" rel="noopener" data-en="View on App Store">App Storeで見る</a>
             </div>
         </article>
 
     </div>
 
-    <h2>Roblox ゲーム</h2>
+    <h2 data-en="Roblox Games">Roblox ゲーム</h2>
     <div class="apps">
 
         <article class="app">
             <a class="icon" href="https://www.roblox.com/games/89833504541732" target="_blank" rel="noopener">
-                <img src="images/apps/eat-blocks.png" alt="ブロックを奪え" width="112" height="112">
+                <img src="images/apps/eat-blocks.png" alt="ブロックを奪え" data-en-alt="Eat Blocks! Giant Robot Battle" width="112" height="112">
             </a>
             <div class="body">
-                <span class="tag">巨大ロボバトル</span>
-                <h3><a href="https://www.roblox.com/games/89833504541732" target="_blank" rel="noopener">ブロックを奪え</a></h3>
-                <p class="catch">ブロックを吸収して、巨大ロボになれ。</p>
-                <p class="desc">散らばったブロックを集めて自分の体を組み上げ、どんどん巨大化。砲台ブロックで撃ちまくり、街ごと破壊！安全地帯が狭まるPvPと、5ウェーブごとにボスが出るPvEサバイバル。</p>
-                <a class="store" href="https://www.roblox.com/games/89833504541732" target="_blank" rel="noopener">Robloxで遊ぶ</a>
+                <span class="tag" data-en="Giant Robot Battle">巨大ロボバトル</span>
+                <h3><a href="https://www.roblox.com/games/89833504541732" target="_blank" rel="noopener" data-en="Eat Blocks! Giant Robot Battle">ブロックを奪え</a></h3>
+                <p class="catch" data-en="Absorb blocks and become a giant robot.">ブロックを吸収して、巨大ロボになれ。</p>
+                <p class="desc" data-en="Gather scattered blocks to build your body and grow ever bigger. Blast away with turret blocks and wreck the whole city! PvP with a shrinking safe zone, plus PvE survival with a boss every 5 waves.">散らばったブロックを集めて自分の体を組み上げ、どんどん巨大化。砲台ブロックで撃ちまくり、街ごと破壊！安全地帯が狭まるPvPと、5ウェーブごとにボスが出るPvEサバイバル。</p>
+                <a class="store" href="https://www.roblox.com/games/89833504541732" target="_blank" rel="noopener" data-en="Play on Roblox">Robloxで遊ぶ</a>
             </div>
         </article>
 
@@ -292,13 +318,52 @@
 
 <footer class="wrap">
     <ul>
-        <li><a href="privacy.html">プライバシーポリシー</a></li>
-        <li><a href="support.html">サポート</a></li>
+        <li><a href="privacy.html" data-en="Privacy Policy">プライバシーポリシー</a></li>
+        <li><a href="support.html" data-en="Support">サポート</a></li>
         <li><a href="app-ads.txt">app-ads.txt</a></li>
-        <li><a href="https://apps.apple.com/jp/developer/yuji-tanaka/id1896778724" target="_blank" rel="noopener">App Store デベロッパーページ</a></li>
+        <li><a href="https://apps.apple.com/jp/developer/yuji-tanaka/id1896778724" target="_blank" rel="noopener" data-en="App Store Developer Page">App Store デベロッパーページ</a></li>
     </ul>
     <p>&copy; YUJI TANAKA</p>
 </footer>
+
+<script>
+(function () {
+    var KEY = 'lang';
+    function load() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
+    function save(v) { try { localStorage.setItem(KEY, v); } catch (e) {} }
+
+    function apply(lang) {
+        var en = lang === 'en';
+        document.documentElement.lang = lang;
+        document.querySelectorAll('[data-en]').forEach(function (el) {
+            if (el.dataset.ja === undefined) el.dataset.ja = el.textContent;
+            el.textContent = en ? el.dataset.en : el.dataset.ja;
+        });
+        [['alt', 'enAlt', 'jaAlt'], ['content', 'enContent', 'jaContent']].forEach(function (k) {
+            document.querySelectorAll('[data-en-' + k[0] + ']').forEach(function (el) {
+                if (el.dataset[k[2]] === undefined) el.dataset[k[2]] = el.getAttribute(k[0]);
+                el.setAttribute(k[0], en ? el.dataset[k[1]] : el.dataset[k[2]]);
+            });
+        });
+        document.querySelectorAll('a[href*="apps.apple.com/jp/"], a[data-ja-href]').forEach(function (a) {
+            if (!a.dataset.jaHref) a.dataset.jaHref = a.getAttribute('href');
+            a.setAttribute('href', en ? a.dataset.jaHref.replace('apps.apple.com/jp/', 'apps.apple.com/us/') : a.dataset.jaHref);
+        });
+        document.querySelectorAll('.lang button').forEach(function (b) {
+            b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
+        });
+    }
+
+    document.querySelectorAll('.lang button').forEach(function (b) {
+        b.addEventListener('click', function () { save(b.dataset.lang); apply(b.dataset.lang); });
+    });
+
+    var saved = load();
+    var lang = saved === 'ja' || saved === 'en' ? saved
+        : (/^ja\b/i.test(navigator.language || '') ? 'ja' : 'en');
+    apply(lang);
+})();
+</script>
 
 </body>
 </html>
